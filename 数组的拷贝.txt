@@ -1,0 +1,10 @@
+public static void main4(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int[] array2 = new int[array.length];//数组拷贝
+        // int[] array2 = array;虽然输出结果和拷贝结果一样但是赋值不是拷贝
+        for (int i = 0; i < array.length; i++) {
+            array2[i] = array[i];
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array2));
+    }
