@@ -1,0 +1,58 @@
+class Shape {
+    public void draw() {
+        System.out.println("画图型!");
+    }
+}
+
+class Rect extends Shape {
+    public void draw() {
+        System.out.println("画矩形!");
+    }
+}
+class Cycle extends Shape {
+    public void draw() {
+        System.out.println("画圆!");
+    }
+}
+class Triangle extends Shape {
+    public void draw() {
+        System.out.println("画一个三角形!");
+    }
+    public static void drawMap(Shape shape) {
+        shape.draw();
+    }
+
+    public static void main(String[] args) {
+        drawMap(new Rect());
+        drawMap(new Cycle());
+        drawMap(new Triangle());
+    }
+}
+public class Test_3_20 {
+    public static void main2(String[] args) {
+        Shape shape1 = new Rect();
+        shape1.draw();
+
+        Shape shape2= new Cycle();
+        shape2.draw();
+
+        Shape shape3 = new Triangle();
+        shape3.draw();
+    }
+    public static void drawShapes() {
+        String[] strings = {"cycle","rect","cycle","rect","flower"};
+        for (String x : strings) {
+            if (x.equals("cycle")) {
+                Cycle cycle = new Cycle();
+                cycle.draw();
+            } else if (x.equals("rect")) {
+                Rect rect = new Rect();
+                rect.draw();
+            }else {
+                Flower flower = new Flower();
+                flower.draw();
+            }
+        }
+
+    }
+}
