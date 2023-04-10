@@ -1,0 +1,19 @@
+public class Test2 {  
+public static int max(int a,int b) {
+        return a > b ? a : b;
+    }
+    public static int max(int a,int b,int c) {
+        int ret = max(a,b);
+        return ret > c ? ret : c;
+    }
+    public static void main(String[] args) {
+        System.out.println(max(1, 2, 3));
+    }
+    public static void function(int a) {
+        //递归数列
+        if (a == 1) {
+            return;
+        }
+        function(a-1);
+        System.out.println(a);
+    }
