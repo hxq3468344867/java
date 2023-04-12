@@ -1,0 +1,12 @@
+public class Test2 {
+public static void main9(String[] args) {
+        int num = 100;
+        while (num <= 200) {
+            if (num % 3 != 0) {
+                num++;
+                continue;
+            }
+            System.out.println("找到了 3 的倍数,为"+num);
+            num++;
+        }
+    }
