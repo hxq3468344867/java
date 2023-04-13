@@ -1,0 +1,18 @@
+public class Test3 {
+ public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int ret = addInt(a,b);
+        System.out.println("ret =" + ret);
+        double a2 = 10.5;
+        double b2 = 20.5;
+        double ret2 = adddouble( a2,b2);
+        System.out.println("ret2 = "+ret2);
+    }
+    public static int addInt(int x,int y) {
+        return x + y;
+    }
+    public static double adddouble(double x,double y) {
+        return x + y;
+    }
+}
