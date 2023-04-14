@@ -1,0 +1,12 @@
+public class Test3 {    
+public static void main(String[] args) {
+        int [] arr = {1,2,3};
+        //获取数组的长度
+        System.out.println("lenght?:"+ arr.length);//执行结果为3
+        //访问数组中的元素
+        System.out.println(arr[1]);//执行结果为2
+        System.out.println(arr[0]);//执行结果为1
+        arr[2] = 100;
+        System.out.println(arr[2]);//执行结果为100
+    }
+}
