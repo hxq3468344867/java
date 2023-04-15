@@ -1,0 +1,23 @@
+public class Test2 { 
+public static void main14(String[] args) {
+        int a = 10;
+        int b = 20;
+        int ret = sum(a,b);
+        System.out.println(ret);
+        double d1 = 12.3;
+        double d2 = 12.5;
+        double ret2 = sum((int) d1, (int) d2);
+        System.out.println(ret2);
+    }
+    public static int fib(int n ) {
+        //斐波那契数列（迭代数列）
+        int f1 = 1;
+        int f2 = 1;
+        int f3 = 1;
+        for (int i = 3;i <= n;i++) {
+            f3 = f1+f2;
+            f1 = f2;
+            f2 = f3;
+        }
+        return f3;
+    }
