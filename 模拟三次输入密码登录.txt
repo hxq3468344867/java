@@ -1,0 +1,18 @@
+public class Test2 {
+public static void main9(String[] args) {
+        //模拟三次输入密码登录
+        Scanner scanner = new Scanner(System.in);
+        int count = 3; //三次输入机会
+        while (count != 0) {
+            System.out.println("请输入你的密码，共有" + count + "次机会！");
+            String pass = scanner.nextLine();
+            //if (pass == "123") {
+            if (pass.equals("123")) {
+                System.out.println("登录成功");
+                break;
+            } else {
+                System.out.println("登陆失败");
+            }
+            count--; //每失败一次登录次数就少一次
+        }
+    }
