@@ -1,0 +1,15 @@
+public class Test3 {  
+ static class Person3{
+        public int age = 18;
+        public String name = "张三";
+        public void show() {
+            System.out.println("我叫" + name + ",今年" + age + "岁");
+        }
+    }
+    static class Test1{
+        public static void main(String[] args) {
+            Person3 person3 = new Person3();
+            person3.show();
+        }
+    }
+}
