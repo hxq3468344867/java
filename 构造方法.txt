@@ -1,0 +1,30 @@
+import javax.print.DocFlavor;
+
+public class Person {
+    private String name;
+    private int age;
+    private String sex;
+    //默认构造方法
+    public Person() {
+        this.name = "caocao";
+        this.age = 10;
+        this.sex = "男";
+    }
+    //带三个参数的构造方法
+    public Person(String name,int age,String sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    public void shouw() {
+        System.out.println("name:"+name+"age:"+age+"sex:"+sex);
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        Person p1 = new Person();//调用不带参数的构造方法
+        p1.shouw();
+        Person p2 = new Person("zhangsan",80,"男");
+        //调用带三个参数的构造方法
+    }
+}
