@@ -1,0 +1,18 @@
+public class TestDemo2 {
+    public int a;
+    public static int count;
+
+    public static void main(String[] args) {
+        TestDemo2 t1 = new TestDemo2();
+        t1.a++;
+        TestDemo2.count++;
+        System.out.println(t1.a);
+        System.out.println(TestDemo.count);
+        System.out.println("=========");
+        TestDemo2 t2 = new TestDemo2();
+        t2.a++;
+        TestDemo2.count++;
+        System.out.println(t2.a);
+        System.out.println(TestDemo.count);
+    }
+}
