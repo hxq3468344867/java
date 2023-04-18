@@ -1,0 +1,31 @@
+  //静态代码块
+public class Person {       
+ static class person{
+            private String name;
+            private int age;
+            private String sex;
+            private static int count = 0;
+            public void Person(){
+                System.out.println("I am Person init()!");
+            }
+            //实例代码块
+            {
+                this.name = "bit";
+                this.age = 12;
+                this.sex = "man";
+                System.out.println("I am instance init()!");
+            }
+            public void show(){
+                System.out.println("name:"+name+"age:"+age+"sex:"+sex);
+            }
+        }
+        public static class Main2 {
+            public static  void main(String[] args) {
+                Person mew;
+                Person p1 = new Person();
+                Person p2 = new Person();
+            }
+        }
+
+    }
+}
