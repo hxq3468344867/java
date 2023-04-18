@@ -1,0 +1,30 @@
+ //使用tostring方法将对象自动生成字符串
+public class Person {   
+ class Person2{
+        private String name;
+        private int age;
+        public Person2(String name,int age) {
+            this.age = age;
+            this.name = name;
+        }
+        public void show() {
+            System.out.println("name:"+name+"+"+"age:"+age);
+        }
+        //重写object 的tostring()方法
+
+        @Override
+        public String toString() {
+            return "Person1{"+
+                    "name='"+name+'\''+
+                    ",age="+age+
+                    '}';
+        }
+    }
+    public static class Main2{
+        public static void main(String[] args) {
+            Person person = new Person("caocao,19");
+            person.show();
+            System.out.println(person);
+        }
+    }
+}
