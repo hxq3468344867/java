@@ -1,0 +1,30 @@
+public class Person {   
+ //构造代码块
+    static class Person{
+        private String name;
+        private int age;
+        private String sex;
+        public Person(String zhangsan, int i, String 男) {
+            System.out.println("I am Person init()!");
+        }
+        {
+            this.name = "bit";
+            this.age = 12;
+            this.sex = "main";
+            System.out.println("I am Person init()!");
+        }
+        public void show() {
+            System.out.println("name:"+name+"age:"+age+"sex:"+sex);
+        }
+
+        public void shouw() {
+
+        }
+    }
+    public static class Main1{
+        public static void main(String[] args) {
+            Person p1 = new Person("zhangsan", 80, "男");
+            p1.show();
+        }
+    }
+}
