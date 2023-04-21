@@ -1,0 +1,15 @@
+public class Test1 {
+public static void main(String[] args) {
+        int a = 1;  //long float double boolean类型不能作为switch的开数
+        switch (a) {  //switch相当于一个开关a等于几就执行第几个case
+            case 1:
+                System.out.println("one");
+                break; //如果没有break就会继续执行下面的内容
+            case 2:
+                System.out.println("two");
+                break;
+            default:
+                System.out.println("没有匹配！");//a的值在case中没有运行就显示没有匹配
+                break;
+        }
+    }
