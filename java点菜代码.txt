@@ -1,0 +1,111 @@
+package Test_20;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+//点菜的主程序
+public class DishApp {
+    //提前准备一些菜品，展示给用户，同时用户可以点菜
+    //定义集合（表示饭店有的菜品）
+    static List<Dish> dishList = new ArrayList<>();
+
+    //用户已点的菜品
+    static List<Dish> PersonDish = new ArrayList<>();
+    private static Dish dish;
+
+    public static void main(String[] args) {
+
+        //先初始化菜品
+        intDish();
+        //创建扫描器对象
+        Scanner s = new Scanner(System.in);
+        //给用户展示主菜单
+        //写死循环
+        while (true) {
+            showMenu();
+            //获取内容
+            int num = s.nextInt();
+
+            switch (num){
+                case 1:
+                    while (true){
+                        //把饭店菜单展示给用户看
+                        showDishMenu();
+                        //获取用户输入的内容
+                        int id = s.nextInt();
+                        //判断
+                        if (id== 0) {
+                            break;
+                        }
+                        //从饭店的集合中获取的菜品的对象 1 2 3 4 5
+                        //集合的索引：0 1 2 3 4
+                        dishList.get(id - 1);
+
+                        System.out.println("您点了"+dish+"菜 ");
+                        PersonDish.add(dish);
+                    }
+                case 2:
+                //展示用户已点的菜单
+                showPersonDis();
+                    break;
+                case 3:
+                //买单
+                    buy();
+                    return;
+
+            }
+        }
+    }
+    //展示饭店菜单
+    public static void showDishMenu(){
+        System.out.println("-----请您点菜-------");
+        //遍历集合
+        for (int i = 0;i < dishList.size();i++) {
+            //从集合中使用i 获取每一个菜品对象
+            Dish dish = dishList.get(i);
+            System.out.println(dish.id+"\t"+dish.name+"\t"+ dish.price);
+
+        }
+        System.out.println("----------输入序号上菜，按0返回上一级------------");
+    }
+    public static void showPersonDis(){
+        System.out.println("-----您已点的菜品-----");
+        //遍历集合
+        for (Dish dish : PersonDish) {
+            System.out.println(dish.id+"\t"+dish.name+"\t"+dish.price);
+        }
+    }
+    public static void buy(){
+        System.out.println("-----请稍等，正在结算-----");
+        //定义金额
+        double total = 0f;
+        //遍历集合
+        for (Dish dish : PersonDish) {
+            //单价的累加
+            total += dish.price;
+        }
+        System.out.println("您本次共消费了"+total+"元");
+    }
+    public static void showMenu() {
+        System.out.println("----主菜单----");
+        System.out.println("菜单\t\t\t\t 1");
+        System.out.println("已点菜品\t\t\t 2");
+        System.out.println("买单\t\t\t\t 3");
+        System.out.println("----根据编号选择服务----");
+
+    }
+        public static void intDish() {
+            Dish dish = new Dish(1, "香辣肉丝", 29);
+            dishList.add(dish);
+            Dish dish1 = new Dish(2, "土豆肉丝", 25);
+            dishList.add(dish1);
+            Dish dish2 = new Dish(3, "青椒肉丝", 30);
+            dishList.add(dish2);
+            Dish dish3 = new Dish(4, "水煮鱼", 35);
+            dishList.add(dish3);
+        }
+
+}
+
