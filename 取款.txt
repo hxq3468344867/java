@@ -1,0 +1,18 @@
+package ch5;
+
+public class Test94 {
+    public static void main(String[]args){
+        Test92 acc=new Test92(1122,20000,0.045);
+        System.out.println("账户ID:"+acc.getId());
+        if (acc.withDraw(2500)==0)
+            System.out.println("取款成功，剩余金额:"+acc.getBalance());
+        else
+            System.out.println("取款失败。剩余金额:"+acc.getBalance());
+        if (acc.deposit(3000)==0)
+                System.out.println("取款成功，剩余金额:"+acc.getBalance());
+        else
+            System.out.println("取款失败，剩余金额:"+acc.getBalance());
+        System.out.println("月利率为:"+acc.getBalance());
+        System.out.println("开户日期为:"+acc.getDateCreate().toString());
+    }
+}
