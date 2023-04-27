@@ -1,0 +1,29 @@
+package ch4.ch4;
+
+public class Test67_3 {
+    static int scores[][] = {{77, 68, 86, 73}, {96, 87, 89, 81}, {70, 90, 85, 85}};
+    static int students, exams;
+    static String output = " ";
+
+    public static void main(String[] args) {
+        students = scores.length;
+        exams = scores[0].length;
+        int highScore = 0;
+        for (int i = 0; i < students; i++)
+            for (int j = 0; j < exams; j++)
+                if (scores[i][j] > highScore)
+                    highScore = scores[i][j];
+        output += " \n最高分" + highScore + " \n";
+        for (int i = 0; i < students; i++) {
+            int total = 0;
+            for (int j = 0; j < exams; j++) {
+                total += scores[i][j];
+            }
+            double average = (double) total / exams;
+            output += " \n第" + (i + 1) + "个学生的平均分:" + average;
+        }
+        System.out.println(output);
+    }
+}
+
+
