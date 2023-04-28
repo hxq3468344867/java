@@ -1,0 +1,34 @@
+package ch7;
+
+public class Exercise1_129 {
+    public static void main(String[] args) {
+        Person p= new Student1("王甜甜", "计算机网络") {
+            @Override
+            public String getDescription() {
+                return "计算机网络";
+            }
+        };
+        System.out.println(p.getName()+","+p.getDescription());
+    }
+}
+    abstract class Person{
+        private String name;
+        public Person(String n){
+            name=n;
+        }
+        public abstract String getDescription();
+        public  String getName(){
+            return  name;
+        }
+    }
+    abstract class Student1 extends Person{
+        private String major;
+        public Student1(String n,String m){
+            super(n);
+            major=m;
+        }
+        public String Student(){
+            return "学生专业是:"+major;
+        }
+    }
+
