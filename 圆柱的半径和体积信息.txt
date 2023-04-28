@@ -1,0 +1,84 @@
+package ch7;
+
+
+    class Circle1{
+        protected double radius;
+        public Circle1(){
+            radius=1.0;
+        }
+        public Circle1(double r){
+            radius=r;
+        }
+        double getRadius(){
+            return radius;
+        }
+        public  double findArea(){
+            return radius*radius*Math.PI;
+        }
+    }
+    //Cylinfer类的实现
+    class Cylinder extends Circle1{
+        private double length;
+        public Cylinder(){
+            super();
+            length=1.0;
+        }
+        public Cylinder(double r,double I){
+            super(r);
+            length=I;
+        }
+        public double findArea(){
+            return 2*super.findArea()+(2*getRadius() *Math.PI)*length;
+        }
+        public double findVolume(){
+            return super.findArea()*length;
+        }
+    }
+    class ComparableCirele1 extends Circle1 implements Comparable{
+        public ComparableCirele1(double r){
+            super(r);
+        }
+        public int compareTo(Object o){
+            if (findArea()>((Circle1)o).findArea())
+                return 1;
+            else if (findArea()<((Circle1)o).findArea())
+                return -1;
+            else
+                return 0;
+        }
+    }
+    class ComparableCylinder extends Cylinder implements Comparable{
+        ComparableCylinder(double r,double I){
+            super(r, I);
+        }
+        public int compareTo(Object o){
+            if (findVolume()>((Cylinder)o).findVolume())
+                return 1;
+            else if (findVolume()<((Cylinder)o).findVolume())
+                return -1;
+            else
+                return 0;
+        }
+    }
+    class Max{
+        public static Comparable max(Comparable o1,Comparable o2){
+            if (o1.compareTo(o2)>0)
+                return o1;
+            else
+                return o2;
+        }
+    }
+    class TestInterface {
+        public static void main(String[] args) {
+            ComparableCirele1 circle1 = new ComparableCirele1(5);
+            ComparableCirele1 circle2 = new ComparableCirele1(4);
+            Comparable circle = Max.max(circle1, circle2);
+            System.out.println("最大圆半径为:" + ((Circle1) circle).getRadius());
+            ComparableCylinder cylinder1 = new ComparableCylinder(5, 2);
+            ComparableCylinder cylinder2 = new ComparableCylinder(4, 5);
+            Comparable cylinder = Max.max(cylinder1, cylinder2);
+            System.out.println("最大圆柱体信息:" + ((Cylinder) cylinder).getRadius() + "体积:" + ((Cylinder) cylinder).findVolume());
+        }
+    }
+
+
