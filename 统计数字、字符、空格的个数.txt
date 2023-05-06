@@ -1,0 +1,29 @@
+package Demo3;
+
+import java.util.Scanner;
+//统计数字、字符、空格的个数
+public class Test2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+
+        int upper = 0;
+        int lower = 0;
+        int blank = 0;
+        int digit = 0;
+        int other = 0;
+
+        for (int i = 0;i < str.length();i++) {
+            char ch = str.charAt(i);
+            if (ch > 'A' && ch <= 'Z') upper ++;
+            else if (ch >= 'a' && ch <= 'z')digit ++;
+            else if (' '==ch) blank ++;
+            else if (ch >= '0' && ch <= '9')digit ++; {
+                
+            }
+            System.out.printf("upper = %d,lower = %d,blank = %d\n",upper,lower,blank);
+            System.out.printf("digit = %d,other = %d\n",digit,other);
+        }
+    }
+}
+
