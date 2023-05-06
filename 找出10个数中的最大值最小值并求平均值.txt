@@ -1,0 +1,36 @@
+package Demo3;
+
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int max = 0;
+        int min = 0;
+
+        int maxIdx = 0;
+        int minIdx = 0;
+
+        int sum = 0;
+        for (int i = 0;i < 10;i++) {
+            int temp = scanner.nextInt();
+            sum += temp;
+            if (0 == i) {
+                max = min = temp;
+                maxIdx = minIdx = i;
+                continue;
+            }
+            if (temp > max) {
+                max = temp;
+                maxIdx = i;
+            }
+            if (temp < min) {
+                min = temp;
+                minIdx = i;
+            }
+        }
+        System.out.printf("maxVal = %d,maxIdx = %d\n",max,maxIdx);
+        System.out.printf("minVal = %d,minIdx = %d\n",min,minIdx);
+        System.out.printf("avg =" +sum/10.0);
+    }
+}
