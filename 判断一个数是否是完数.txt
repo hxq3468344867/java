@@ -1,0 +1,20 @@
+package Demo3;
+
+import java.util.Scanner;
+
+public class Test5 {
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      int n = scanner.nextInt();
+
+      int sum = 0;
+
+      for (int i = 1;i < n;i++) {
+          if (0 == n % i) {//如果 n 能够被 i 整除就说明 i是n的因子
+              System.out.println(i);
+              sum += i;
+          }
+      }
+      String ret = sum == n ? "yes" : "no";
+    }
+}
